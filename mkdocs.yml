@@ -3,8 +3,9 @@ site_name: Embedded AI Laboratory
 theme:
   name: material
 
-  logo: page_content/uef_musta_logo.png
-  
+  logo: page_content/UEF_Favicon_192x192.png
+  favicon: page_content/UEF_Favicon_192x192.png
+
   palette:
   
     # Palette toggle for light mode
