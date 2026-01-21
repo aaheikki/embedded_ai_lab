@@ -3,7 +3,7 @@
 <img src="./page_content/eu_logo.png" width="400">
 <img src="./page_content/pohjois-savon_liitto_logo.png" width="200">
 
-The Embedded AI Laboratory at the Kuopio campus of the University of Eastern Finland focuses on the development and implementation of embedded AI technologies. The laboratory's goals are to develop an open-access embedded ai software platform, including instructions and educational material to support learning and replication. The platform is demonstrated though multiple pilot project:
+The Embedded AI Laboratory at the Kuopio campus of the University of Eastern Finland focuses on the development and implementation of embedded AI technologies. The laboratory's goals are to develop an open-access embedded ai software platform, including instructions and educational material to support learning and replication. The platform is demonstrated though multiple pilot projects:
 
 - PCB Assembly line
 - Drone swarm
