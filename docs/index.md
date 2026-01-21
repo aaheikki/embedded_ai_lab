@@ -5,8 +5,17 @@
 
 <!--<img src="./page_content/uef_musta_logo.png" width="150">-->
 
+The project consist of implementing and developing embedded AI laboratory at the Kuopio campus of the University of Eastern Finland and embedded AI software platform with instructions and education material open for all. The platform is demonstrated with multiple pilots consisting of:
 
+- PCB Assembly line
+- Drone swarm
+- Pipeline control system
+- Humanoid robot
 
-The project implements and demonstrates an embedded system platform utilizing artificial intelligence. This platform can then be utilized, in particular, by the Northern Savo industry. The project will also produce instructions and education material that enables the utilization of the platform. The project increases general awareness and competence related to embedded systems utilizing AI.
+## PCB Assembly line
 
-The project also implements a laboratoyy related to the platform at the Kuopio campus of the University of Eastern Finland. This laboratory faciliates the implementation and adoption of the fast prototyping cycle for the regional enterprices. 
+## Drone swarm
+
+## Pipeline control system
+
+## Humanoid robot
