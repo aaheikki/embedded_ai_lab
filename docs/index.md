@@ -11,11 +11,3 @@ The Embedded AI Laboratory at the Kuopio campus of the University of Eastern Fin
 - Humanoid robot
 
 A Strong emphasis is placed on making the project replicable. To achieve this, the construction of the laboratory is fully documented, and a workflow model for embedded AI software development and documentation is provided. 
-
-### PCB Assembly line
-
-### Drone swarm
-
-### Pipeline control system
-
-### Humanoid robot
