@@ -1,21 +1,23 @@
-# Embedded AI Laboratory
+## Embedded AI Laboratory
 
 <img src="./page_content/eu_logo.png" width="400">
 <img src="./page_content/pohjois-savon_liitto_logo.png" width="200">
 
-<!--<img src="./page_content/uef_musta_logo.png" width="150">-->
-
-The project consist of implementing and developing embedded AI laboratory at the Kuopio campus of the University of Eastern Finland and embedded AI software platform with instructions and education material open for all. The platform is demonstrated with multiple pilots consisting of:
+The Embedded AI Laboratory at the Kuopio campus of the University of Eastern Finland focuses on the development and implementation of embedded AI technologies. The laboratory's goals are to develop an open-access embedded ai software platform, including instructions and educational material to support learning and replication. The platform is demonstrated though multiple pilot project:
 
 - PCB Assembly line
 - Drone swarm
 - Pipeline control system
 - Humanoid robot
 
-## PCB Assembly line
+Strong emphasis is placed on to make the project copyable. To accomplish this building of the laboratory is documented and a workflow model for embedded AI software development and documentation is provided.
 
-## Drone swarm
+A Strong emphasis is placed on making the project replicable. To achieve this, the construction of the laboratory is fully documented, and a workflow model for embedded AI software development and documentation is provided. 
 
-## Pipeline control system
+### PCB Assembly line
 
-## Humanoid robot
+### Drone swarm
+
+### Pipeline control system
+
+### Humanoid robot
