@@ -3,8 +3,8 @@ site_name: Embedded AI Laboratory
 theme:
   name: material
 
-  logo: page_content/UEF_Favicon_192x192.png
-  favicon: page_content/UEF_Favicon_192x192.png
+  logo: assets/UEF_Favicon_192x192.png
+  favicon: assets/UEF_Favicon_192x192.png
 
   palette:
   
