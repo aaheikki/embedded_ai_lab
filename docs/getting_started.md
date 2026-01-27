@@ -1,18 +1,23 @@
 ## Before getting started
+### Version Control: What It Is and Why You Need It
 
+- **Version control** is the practice of tracking and managing changes in files and software projects.
+- **Tracking changes** lets you revert to earlier working states if new bugs or issues appear during development.
+- **Branching and merging** allow developers to work independently without interfering with each other.
 
-### What is version control and why to use it
-- **Version control** is practice of tracking and controlling changes in computer files. 
-- **Tracking changes** provides history of changes that can be used to go back in time if some unsolvable bugs arise later in the development.
-- **Branching and Merging** lets team members to commit changes in their own environment without hindering others work and when changes are ready they can be merged to the main branch. Branching is also useful for individuals workflow in testing or developing on top of main software without need of creating copies of project folders and keeping track of them.
+  - Team members can develop features, test ideas, or prototype solutions in isolated branches.
+  - When the work is stable, it can be merged cleanly into the main branch.
+  - Even for individuals, branching avoids creating multiple copies of project folders and manually tracking them.
 
-### Code Documentation and its benefits
-- **Inline comments** are used in the code to explain partitions of code.
-    - **Structure**: Writing and commenting code to form clear structure of the code makes the code easy to navigate enabling quicker debugging.
-    - **Reasoning**: Explaining non obvious technical choices helps to avoid same problems in the future it was used to fix.
-- **User/Project documentation** is situated outside of the software code to work as a table of content and guide for users.
-    - **Building on top**: Easy to build on top when you can figure out what tools there already are in your toolshed.
-    - **Collaboration**: Collaborators become quickly productive members while maintaining consistency of the project.
-    - **User adoption**: User are more likely to use something easily understandable and implementable.
-    
+### Code Documentation and Why It Matters
+
+- **Inline comments** explain specific parts of the code.
+    - **Structure:** Writing code with clear structure and meaningful comments makes it easier to navigate and debug.
+    - **Reasoning:** Documenting non-obvious design choices prevents repeating old mistakes and helps future contributors understand *why* something was done a certain way.
+
+- **Project / User documentation** outside the codebase acts as a guide and reference for users and developers much like table of content.
+    - **Building on top:** Clear documentation makes it easy to understand what already exists, so new features do not reinvent previous work.
+    - **Collaboration:** New collaborators can become productive quickly while maintaining consistency across the project.
+    - **User adoption:** People are more likely to use and contribute to systems that are understandable and well explained.
+
 ## Getting started
