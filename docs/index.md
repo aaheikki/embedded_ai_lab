@@ -11,7 +11,7 @@
 - Hobbyists interested in automation, robotics and AI
 
 ### Core Principles 
-- **Open and Replicable**: All designs and workflows are documented to allow others to replicate the lab or individual pilot projects and build on top of them.
+- **Open and Replicable**: All designs and workflows are documented to allow others to replicate the lab or individual sub-projects and build on top of them.
 - **Educational Focus**: Documentation will contain educational material to help users learn ideas and concepts in embedded AI with hands on examples.
 - **Research to product**: The lab focuses on turning research concepts into practical, deployable embedded AI solutions.
 
@@ -20,11 +20,14 @@
 The Embedded AI Laboratory Project at the Kuopio campus of the University of Eastern Finland runs from 1.1.2026 to 31.7.2028.
 
 The Projects main goals are:
+
 - developing an open-access embedded AI software platform,
 - producing documentation and educational recourses and
-- demonstrating embedded AI with multiple pilot projects
+- demonstrating embedded AI with multiple sub-projects
 
-| Project | Description | Status|
+Following table contains the key sub-projects:
+
+| Sub-Project | Description | Status|
 |-|-|-| 
 |[Embedded AI software platform](embedded_ai_software_platform.md) | software platform for forming different AI solutions and implementing them into different devices. | |
 |[PCB Assembly line](assembly_line.md) | Produces prototypes of sensory systems and small scale production with quality control. | |
