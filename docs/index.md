@@ -31,6 +31,6 @@ Following table contains the key sub-projects:
 |-|-|-| 
 |[Embedded AI software platform](embedded_ai_software_platform.md) | software platform for forming different AI solutions and implementing them into different devices. | |
 |[PCB Assembly line](assembly_line.md) | Produces prototypes of sensory systems and small scale production with quality control. | |
-|[Pipeline control system](pipe_line_control_system.md)| Simulates industrial pipeline control system.| | 
-|[Drone swarm](drone_swarm.md)| Implementing swarm intelligence into flying drones and  producing laser show.| | 
+|[Pipeline control system](pipe_line_control_system.md)| Simulates industrial pipeline process control system.| | 
+|[Drone swarm](drone_swarm.md)| Swarm-intelligent autonomous drones capable of coordinated flight and small scale laser show.| | 
 |[Humanoid robot](humanoid_robot.md)| Platform for embodied AI, motion control, and robotics research.| |
