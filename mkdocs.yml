@@ -21,6 +21,24 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - Overview: getting_started.md
+      - Embedded AI Software Platform: embedded_ai_software_platform.md
+
+  - Documentation:
+      - Documentation Guide: documentation_guide.md
+      - Version Control Guide: version_control_guide.md
+
+  - Projects:
+      - PCB Assembly Line: assembly_line.md
+      - Drone Swarm: drone_swarm.md
+      - Pipeline Control System: pipe_line_control_system.md
+      - Humanoid Robot: humanoid_robot.md
+ 
 extra_css:
   - stylesheets/uef.css
 
