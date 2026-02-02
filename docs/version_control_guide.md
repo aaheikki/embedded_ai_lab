@@ -1,23 +1,25 @@
+### What is Git
 
-### What is Git and GitHub
+Git is a distributed version control system used to track changes in files over time.
+
+- Open-source
+- Fast and efficient
+- Distributed: every clone contains the full history of the project.
+- Branching: enabling parallel work and experimentation
 
 
-Git is most used version control and we will be implementing git as version control tool and GitHub as our upstream repository. 
-
-#### Installing git
-Install instructions can be found from their web site
+### Installing git
+Install instructions can be found from
 <a href="https://git-scm.com/install" target="_blank" rel="noopener">
 https://git-scm.com/install
-</a> or quick install for debian based linux and windows powershell
+</a>. For quick install on command line for debian based linux and windows powershell
 
 === "Bash (Linux)"
-
     ~~~bash
     apt install git
     ~~~
 
 === "PowerShell (Windows)"
-
     ~~~powershell
     winget install --id Git.Git -e --source winget
     winget list git
@@ -42,7 +44,7 @@ Initialize git with following command:
 ~~~bash
 git init
 ~~~
-This creates and configs .git to track your folders changes. Next add all files using '.' or individual files to be tracked:
+This creates and configs .git to track your folders changes. Next add all files using point sign or individual files to be tracked:
 ~~~bash
 git add .
 ~~~
@@ -50,7 +52,11 @@ Make first commit:
 ~~~bash
 git commit -m 'initial commit'
 ~~~
-Commits work as timestamps you can return to in case of over the head bugs. It is good practice to make commits between each completed functioning part of code and describing the change made. After each commit the files you want to add to next commit need to be added again. You can check which files have changes and which ones have been added to next commit: 
+Both commands can be combined by adding another option to commit:
+~~~bash
+git commit -am 'initial commit'
+~~~
+Commits create a snapshot of the files you can return to and branch from. It is good practice to make commits between each completed functioning part of code and describing the change made. After each commit the files you want to add to next commit need to be added again. You can check which files have changes and which ones have been added to next commit: 
 ~~~bash
 git status
 ~~~
@@ -71,7 +77,17 @@ To see previous commits and their ids to reset or to branch from use command
 git log
 ~~~
 
-### GitHub repository
+
+### What is GitHub
+GitHub is a hosting service for Git repositories. It adds collaboration features on top of git:
+
+- Remote storage for Git repositories
+- Sharing code with others
+- Pull requests for reviewing and merging changes
+- Issue tracking and project discussions
+- Access control and visibility (public / private)
+
+For those who want to self host repositories Gitea is one open-source option. 
 
 #### Creating GitHub account and adding SSH Key
 Before making a new repository you need to create GitHub account at 
@@ -91,8 +107,6 @@ B --> C[New SSH Key];
 C --> D(Add title describing your device and your public key from id_ed25519.pub);
 D --> E[Add SSH Key]
 ~~~
-
-Give name to repository, set it to public or private and do not add README file. 
 
 #### New repository
 On GitHub create new repository. Do not add readme file. Then on command line
