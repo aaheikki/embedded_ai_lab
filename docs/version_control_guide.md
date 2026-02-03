@@ -52,10 +52,6 @@ Make first commit:
 ~~~bash
 git commit -m 'initial commit'
 ~~~
-Both commands can be combined by adding another option to commit:
-~~~bash
-git commit -am 'initial commit'
-~~~
 Commits create a snapshot of the files you can return to and branch from. It is good practice to make commits between each completed functioning part of code and describing the change made. After each commit the files you want to add to next commit need to be added again. You can check which files have changes and which ones have been added to next commit: 
 ~~~bash
 git status
@@ -146,4 +142,98 @@ B --> D[git add; git commit];
 D --> B;
 B --> C[git push];
 C --> E[End of session];
+~~~
+Further you could have stable main / master branch from which you have branched a development branch that you and possibly others are working on by then again branching from and merging. 
+
+### Branching and Merging
+Next is diagram showing possible scenario with branches main, develop, feature and hot fix. 
+~~~mermaid
+gitGraph
+    commit id: "initial"
+
+    branch develop
+    checkout develop
+    commit id: "setup dev"
+
+    branch feature
+    checkout feature
+    commit id: "simple change"
+    checkout develop
+    merge feature id: "merge feature"
+
+    checkout main
+    branch hot_fix
+    checkout hot_fix
+    commit id: "hot fix"
+    checkout main
+    merge hot_fix id: "merge hot fix"
+
+    checkout develop
+    merge main id: "updating develop branch"
+
+    checkout feature
+    commit id: "feature progress"
+    commit id: "feature complete"
+    checkout develop
+    merge feature id: "merge feature progress"
+    
+    checkout main
+    merge develop id: "release"
+~~~
+
+You and other developers would be working mostly on the develop branch by making individual feature branches and merging them back once finished. In critical cases where hot fix is needed one could also branch from main and make necessary changes. Afterwards main could be merged with develop branch to get it up to date or merge develop into main working as new release.
+
+You can branch from the current commit and change to it with:
+~~~bash
+git branch name_new_branch
+git checkout name_new_branch
+~~~
+You would apply your normal gitflow and once ready to merge back with
+~~~bash
+git merge
+~~~
+Git will merge things automatically in cases when there is no room for guessing between conflicted changes. In situations in which changes are made to same files in different branches git notifies you of files that have conflicts and modifies them to identify which part is from which branch. You would then make changes to the files the way you see best, add them to next commit and make commit finishing the merge.
+
+Let's go through simple example of conflict in merge. We will add text file in main branch twice from it and append to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
+~~~mermaid
+gitGraph
+    commit id: "initial .txt file"
+
+    branch branch_1
+    branch branch_2
+    checkout branch_1
+    commit id: "append to .txt file first time"
+
+    checkout branch_2
+    commit id: "append to .txt file second time"
+
+    checkout main
+    merge branch_1 id: "merge 1st branch"
+    merge branch_2 id: "merge 2nd branch"
+    commit id: "resolving conflicts - finishing the merge"
+~~~
+
+In the main branch that lets create .txt file with some initial text
+~~~bash
+echo "initial line" > merge_test.txt
+~~~
+create two branches, move to them and append new lines to .txt file
+~~~bash
+git branch branch_1
+git branch branch_2
+git checkout branch_1
+echo "line branch_1" >> merge_test.txt
+git commit -m 'line branch_1'
+git checkout branch_2
+echo "line branch_2" >> merge_test.txt
+git commit -m 'line branch_2'
+~~~
+To merge branches move to the main branch and merge
+~~~bash
+git checkout main
+git merge branch_1
+~~~
+Here are no conflicts and merge is done automatically, but in the next one you are requested to resolve the conflicts
+~~~bash
+git merge branch_2
 ~~~
