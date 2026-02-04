@@ -7,25 +7,22 @@ Git is a distributed version control system used to track changes in files over 
 - Distributed: every clone contains the full history of the project.
 - Branching: enabling parallel work and experimentation
 
+Objective of this guide is to give users simple workflow using git and small introduction to some of its capabilities that are useful in larger and collaboration work. Git has its own comprehensive documentation and guide book for further reading <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">
+git-scm.com/book/en/v2
+</a>.
+
+Git has many GUI tools and also vscode provides basic git functions, but git on command line is same for all environments and has all the available commands so demonstration is best done on command line.
 
 ### Installing git
-Install instructions can be found from
+Follow installation instructions at
 <a href="https://git-scm.com/install" target="_blank" rel="noopener">
 https://git-scm.com/install
-</a>. For quick install on command line for debian based linux and windows powershell
+</a>.
+For quick install on command line for debian based linux
 
-=== "Bash (Linux)"
-    ~~~bash
-    apt install git
-    ~~~
-
-=== "PowerShell (Windows)"
-    ~~~powershell
-    winget install --id Git.Git -e --source winget
-    winget list git
-    y
-    exit
-    ~~~
+~~~bash
+apt install git
+~~~
 
 ### Running git locally 
 To use git you navigate to already existing project folder or a new one you want to track. Project folder could look something like this:
@@ -87,7 +84,7 @@ For those who want to self host repositories Gitea is one open-source option.
 
 #### Creating GitHub account and adding SSH Key
 Before making a new repository you need to create GitHub account at 
-<a href="https:github.com/" target="_blank" rel="noopener">
+<a href="https://github.com/" target="_blank" rel="noopener">
 https:github.com/
 </a>.
 
@@ -223,9 +220,11 @@ git branch branch_1
 git branch branch_2
 git checkout branch_1
 echo "line branch_1" >> merge_test.txt
+git add .
 git commit -m 'line branch_1'
 git checkout branch_2
 echo "line branch_2" >> merge_test.txt
+git add .cd
 git commit -m 'line branch_2'
 ~~~
 To merge branches move to the main branch and merge
@@ -236,4 +235,7 @@ git merge branch_1
 Here are no conflicts and merge is done automatically, but in the next one you are requested to resolve the conflicts
 ~~~bash
 git merge branch_2
-~~~
+~~~                 
+
+#### Reset
+

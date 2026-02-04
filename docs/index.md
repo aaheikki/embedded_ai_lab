@@ -1,9 +1,10 @@
-## Embedded AI Laboratory
 <div style="display: flex; align-items: center; gap: 40px;">
   <img src="./assets/EN_co_fundedvertical_RGB_POS.png" width="200">
   <img src="./assets/uef_musta_logo.png" width="120">
   <img src="./assets/pohjois-savon_liitto_logo.png" width="200">
 </div>
+
+## Embedded AI Laboratory
 
 ### Who is this for?
 - Students and researchers in embedded systems, AI and robotics
@@ -34,3 +35,19 @@ Following table contains the key sub-projects:
 |[Pipeline control system](pipe_line_control_system.md)| Simulates industrial pipeline process control system.| | 
 |[Drone swarm](drone_swarm.md)| Swarm-intelligent autonomous drones capable of coordinated flight and small scale laser show.| | 
 |[Humanoid robot](humanoid_robot.md)| Platform for embodied AI, motion control, and robotics research.| |
+
+
+### Feedback and Contribution
+
+You can contact me through email via [aaro.heikkinen@uef.fi](mailto:aaro.heikkinen@uef.fi) or create new issue on
+<a href="https://github.com/aaheikki/embedded_ai_lab/issues" target="_blank" rel="noopener">
+GitHub
+</a> with low barrier of entry if you have:
+
+- found a spelling error.
+- found mistake in documentation or in the software.
+- suggestions.
+- general questions.
+
+### Getting started
+Next follow the [getting started](getting_started.md) page for the intended order of the tutorial.
