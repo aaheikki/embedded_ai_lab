@@ -39,9 +39,7 @@ Following table contains the key sub-projects:
 ### Feedback and Contribution
 
 You can contact me through email via [aaro.heikkinen@uef.fi](mailto:aaro.heikkinen@uef.fi) or create new issue on
-<a href="https://github.com/aaheikki/embedded_ai_lab/issues" target="_blank" rel="noopener">
-GitHub
-</a> if you have:
+[GitHub](https://github.com/aaheikki/embedded_ai_lab/issues) if you have:
 
 - found a spelling error,
 - found mistake in documentation or in the software,
