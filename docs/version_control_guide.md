@@ -134,10 +134,10 @@ D --> B;
 B --> C[git push];
 C --> E[End of session];
 ~~~
-Further you could have stable main / master branch from which you have branched a development branch that you and possibly others are working on by then branching from and merging. 
+Further you could have stable master / main branch from which you have branched a development branch that you and possibly others are working on by then branching from and merging. 
 
 ### Branching and Merging
-Next is diagram showing possible scenario with branches main, develop, feature and hot fix. 
+Next is diagram showing possible scenario with branches master, develop, feature and hot fix. 
 ~~~mermaid
 gitGraph
     commit id: "initial"
@@ -152,15 +152,15 @@ gitGraph
     checkout develop
     merge feature id: "merge feature"
 
-    checkout main
+    checkout master
     branch hot_fix
     checkout hot_fix
     commit id: "hot fix"
-    checkout main
+    checkout master
     merge hot_fix id: "merge hot fix"
 
     checkout develop
-    merge main id: "updating develop branch"
+    merge master id: "updating develop branch"
 
     checkout feature
     commit id: "feature progress"
@@ -168,11 +168,11 @@ gitGraph
     checkout develop
     merge feature id: "merge feature progress"
     
-    checkout main
+    checkout master
     merge develop id: "release"
 ~~~
 
-You and other developers would be working mostly on the develop branch by making individual feature branches and merging them back once finished. In critical cases where hot fix is needed one could also branch from main and make necessary changes. Afterwards main could be merged with develop branch to get it up to date or merge develop into main working as new release.
+You and other developers would be working mostly on the develop branch by making individual feature branches and merging them back once finished. In critical cases where hot fix is needed one could also branch from master and make necessary changes. Afterwards master could be merged with develop branch to get it up to date or merge develop into master working as new release.
 
 You can branch from the current commit and change to it:
 ~~~bash
@@ -185,7 +185,7 @@ git merge
 ~~~
 Git will merge things automatically in cases when there is no room for guessing between conflicted changes. In situations in which changes are made to same files in different branches git notifies you of files that have conflicts and modifies them to identify which part is from which branch. You would then make changes to the files the way you see best, add them to next commit and make commit finishing the merge.
 
-Let's go through simple example of conflict in merge. We will add text file in main, branch twice from it and append line to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
+Let's go through simple example of conflict in merge. We will add text file in master, branch twice from it and append line to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
 ~~~mermaid
 gitGraph
     commit id: "initial .txt file"
@@ -198,13 +198,13 @@ gitGraph
     checkout branch_2
     commit id: "append to .txt file second time"
 
-    checkout main
+    checkout master
     merge branch_1 id: "merge 1st branch"
     merge branch_2 id: "merge 2nd branch"
     commit id: "resolving conflicts - finishing the merge"
 ~~~
 
-Moving on to the command line. In the main branch creating .txt file with some initial text
+Moving on to the command line. In the master branch creating .txt file with some initial text
 ~~~bash
 echo "initial line" > merge_test.txt
 git add .
@@ -223,9 +223,9 @@ echo "line branch_2" >> merge_test.txt
 git add .
 git commit -m 'line branch_2'
 ~~~
-To merge branches move to the main branch and merge
+To merge branches move to the master branch and merge
 ~~~bash
-git checkout main
+git checkout master
 git merge branch_1
 ~~~
 Here are no conflicts and merge is done automatically, but in the next one you are requested to resolve the conflicts
