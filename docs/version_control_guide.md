@@ -7,17 +7,13 @@ Git is a distributed version control system used to track changes in files over 
 - Distributed: every clone contains the full history of the project.
 - Branching: enabling parallel work and experimentation
 
-Objective of this guide is to give users simple workflow using git and small introduction to some of its capabilities that are useful in larger and collaboration work. Git has its own comprehensive documentation and guide book for further reading <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">
-git-scm.com/book/en/v2
-</a>.
+Objective of this guide is to give users simple workflow using git and small introduction to some of its capabilities that are useful in larger and collaboration work. Git has its own comprehensive documentation and guide book [git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)
+which should be consulted.
 
-Git has many GUI tools and also vscode provides basic git functions, but git on command line is same for all environments and has all the available commands so demonstration is best done on command line.
+Git comes with build-in GUI tool but also has many third party GUI tools. Also vscode provides basic git functions, but git on command line is same for all environments and has all the available commands so using git on command line is advised, but not necessary.
 
 ### Installing git
-Follow installation instructions at
-<a href="https://git-scm.com/install" target="_blank" rel="noopener">
-https://git-scm.com/install
-</a>.
+Follow installation instructions at [https://git-scm.com/install](https://git-scm.com/install).
 For quick install on command line for debian based linux
 
 ~~~bash
@@ -72,7 +68,7 @@ git log
 
 
 ### What is GitHub
-GitHub is a hosting service for Git repositories. It adds collaboration features on top of git:
+GitHub is a hosting service for Git repositories. It adds some collaboration features on top of git:
 
 - Remote storage for Git repositories
 - Sharing code with others
@@ -80,15 +76,13 @@ GitHub is a hosting service for Git repositories. It adds collaboration features
 - Issue tracking and project discussions
 - Access control and visibility (public / private)
 
-For those who want to self host repositories Gitea is one open-source option. 
+For those who want to self host repositories Gitea is one open-source option to look into.
 
 #### Creating GitHub account and adding SSH Key
-Before making a new repository you need to create GitHub account at 
-<a href="https://github.com/" target="_blank" rel="noopener">
-https:github.com/
-</a>.
+Before making a new repository you need to create GitHub account on
+[github.com](https://github.com/).
 
-After logging add ssh public key to access your repositories through your GitHub account. If you do not have generated ssh keys use following command to create private and public key pair to ~/.ssh/id_ed25519 and ~/.ssh/id_ed25519.pub:
+After logging add ssh public key to access your repositories through your GitHub account. If you do not have generated ssh keys use command line to create private and public key pair to ~/.ssh/id_ed25519 and ~/.ssh/id_ed25519.pub by typing:
 ~~~bash
 ssh-keygen
 ~~~
@@ -102,7 +96,7 @@ D --> E[Add SSH Key]
 ~~~
 
 #### New repository
-On GitHub create new repository. Do not add readme file. Then on command line
+On GitHub create new repository. Do not add readme file. Then on command line using your username and repository names
 ~~~bash 
 git remote add origin git@github.com:username/repo_name.git
 ~~~
@@ -130,7 +124,7 @@ If you are owner or have writing rights you can start pushing and pulling.
 
 #### Remote gitflow
 
-When working with repositories same local gitflow is down, but you will have to first pull changes from repository and at the end of session push your changes to the repository.
+When working with repositories same local gitflow is applies, but you will have to first pull changes from repository and at the end of session push your changes to the repository for your local files to be up to date and to share your local work.
 ~~~mermaid
 graph LR
 Z[Start of session] --> A[git pull]
@@ -140,7 +134,7 @@ D --> B;
 B --> C[git push];
 C --> E[End of session];
 ~~~
-Further you could have stable main / master branch from which you have branched a development branch that you and possibly others are working on by then again branching from and merging. 
+Further you could have stable main / master branch from which you have branched a development branch that you and possibly others are working on by then branching from and merging. 
 
 ### Branching and Merging
 Next is diagram showing possible scenario with branches main, develop, feature and hot fix. 
@@ -180,18 +174,18 @@ gitGraph
 
 You and other developers would be working mostly on the develop branch by making individual feature branches and merging them back once finished. In critical cases where hot fix is needed one could also branch from main and make necessary changes. Afterwards main could be merged with develop branch to get it up to date or merge develop into main working as new release.
 
-You can branch from the current commit and change to it with:
+You can branch from the current commit and change to it:
 ~~~bash
 git branch name_new_branch
 git checkout name_new_branch
 ~~~
-You would apply your normal gitflow and once ready to merge back with
+You would apply your normal gitflow and once ready with changes merge back:
 ~~~bash
 git merge
 ~~~
 Git will merge things automatically in cases when there is no room for guessing between conflicted changes. In situations in which changes are made to same files in different branches git notifies you of files that have conflicts and modifies them to identify which part is from which branch. You would then make changes to the files the way you see best, add them to next commit and make commit finishing the merge.
 
-Let's go through simple example of conflict in merge. We will add text file in main branch twice from it and append to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
+Let's go through simple example of conflict in merge. We will add text file in main, branch twice from it and append line to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
 ~~~mermaid
 gitGraph
     commit id: "initial .txt file"
@@ -210,7 +204,7 @@ gitGraph
     commit id: "resolving conflicts - finishing the merge"
 ~~~
 
-In the main branch that lets create .txt file with some initial text
+Moving on to the command line. In the main branch creating .txt file with some initial text
 ~~~bash
 echo "initial line" > merge_test.txt
 git add .
@@ -244,7 +238,7 @@ Auto-merging merge_test.txt
 CONFLICT (add/add): Merge conflict in merge_test.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
-Message already tells us that the conflicts are in merge_test-txt file and to fix conflicts and to commit results. This can be seen also using the git status command. Opening the merge_test.txt file we see that git has modified the file to pinpoint the conflicts:
+Message already tells us that the conflicts are in merge_test.txt file and to fix conflicts and to commit results. The same can be seen also using the git status command. Moving on with the merge, opening the merge_test.txt file we see that git has modified the file to pinpoint the conflicts:
 ~~~
 initial line
 <<<<<< HEAD
@@ -253,7 +247,7 @@ line branch_1
 line branch_2
 >>>>>> branch_2
 ~~~
-Next step is not to chose which change to keep, but to **freely modify** the merge_test.txt file to desired state. Like removing both lines and adding completely another one:
+Next step is not just to chose which change to keep, but to **freely modify** the merge_test.txt file to desired state. Like removing both lines and adding completely another one:
 ~~~
 initial line
 resolved conflict line

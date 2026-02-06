@@ -14,8 +14,7 @@
 ### Core Principles 
 - **Open and Replicable**: All designs and workflows are documented to allow others to replicate the lab or individual sub-projects and build on top of them.
 - **Educational Focus**: Documentation will contain educational material to help users learn ideas and concepts in embedded AI with hands on examples.
-- **Research to product**: The lab focuses on turning research concepts into practical, deployable embedded AI solutions.
-
+- **Research to product**: The lab gives means to apply research into real-world data through sensory systems and further to produce functioning product from proved concept.
 
 ### Project Timeline / Roadmap
 The Embedded AI Laboratory Project at the Kuopio campus of the University of Eastern Finland runs from 1.1.2026 to 31.7.2028.
@@ -33,7 +32,7 @@ Following table contains the key sub-projects:
 |[Embedded AI software platform](embedded_ai_software_platform.md) | software platform for forming different AI solutions and implementing them into different devices. | |
 |[PCB Assembly line](assembly_line.md) | Produces prototypes of sensory systems and small scale production with quality control. | |
 |[Pipeline control system](pipe_line_control_system.md)| Simulates industrial pipeline process control system.| | 
-|[Drone swarm](drone_swarm.md)| Swarm-intelligent autonomous drones capable of coordinated flight and small scale laser show.| | 
+|[Drone swarm](drone_swarm.md)| Swarm intelligent autonomous drones capable of coordinated flight.| | 
 |[Humanoid robot](humanoid_robot.md)| Platform for embodied AI, motion control, and robotics research.| |
 
 
@@ -42,12 +41,12 @@ Following table contains the key sub-projects:
 You can contact me through email via [aaro.heikkinen@uef.fi](mailto:aaro.heikkinen@uef.fi) or create new issue on
 <a href="https://github.com/aaheikki/embedded_ai_lab/issues" target="_blank" rel="noopener">
 GitHub
-</a> with low barrier of entry if you have:
+</a> if you have:
 
-- found a spelling error.
-- found mistake in documentation or in the software.
-- suggestions.
-- general questions.
+- found a spelling error,
+- found mistake in documentation or in the software,
+- suggestions,
+- or any general questions.
 
 ### Getting started
 Next follow the [getting started](getting_started.md) page for the intended order of the tutorial.
