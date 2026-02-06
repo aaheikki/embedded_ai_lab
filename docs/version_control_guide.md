@@ -213,6 +213,8 @@ gitGraph
 In the main branch that lets create .txt file with some initial text
 ~~~bash
 echo "initial line" > merge_test.txt
+git add .
+git commit -m 'initial .txt file'
 ~~~
 create two branches, move to them and append new lines to .txt file
 ~~~bash
@@ -224,7 +226,7 @@ git add .
 git commit -m 'line branch_1'
 git checkout branch_2
 echo "line branch_2" >> merge_test.txt
-git add .cd
+git add .
 git commit -m 'line branch_2'
 ~~~
 To merge branches move to the main branch and merge
@@ -236,6 +238,35 @@ Here are no conflicts and merge is done automatically, but in the next one you a
 ~~~bash
 git merge branch_2
 ~~~                 
+You get conflict message:
+~~~
+Auto-merging merge_test.txt
+CONFLICT (add/add): Merge conflict in merge_test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+~~~
+Message already tells us that the conflicts are in merge_test-txt file and to fix conflicts and to commit results. This can be seen also using the git status command. Opening the merge_test.txt file we see that git has modified the file to pinpoint the conflicts:
+~~~
+initial line
+<<<<<< HEAD
+line branch_1
+======
+line branch_2
+>>>>>> branch_2
+~~~
+Next step is not to chose which change to keep, but to **freely modify** the merge_test.txt file to desired state. Like removing both lines and adding completely another one:
+~~~
+initial line
+resolved conflict line
+~~~
+Then add, commit, and move to next possible conflict if non merge is completed.
+~~~bash
+gid add .
+git commit -m 'resolved merge_.txt conflict'
+~~~
 
 #### Reset
-
+If there comes issues in merge process and comes need to abort then:
+~~~bash
+git merge --abort
+~~~
+In more general needs for resets and reverts look into git revert, reset and branching from previous commits to see which one suites your scenario.
