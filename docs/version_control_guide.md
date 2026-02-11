@@ -1,4 +1,4 @@
-### What is Git
+## What is Git
 
 Git is a distributed version control system used to track changes in files over time.
 
@@ -12,7 +12,7 @@ which should be consulted.
 
 Git comes with build-in GUI tool but also has many third party GUI tools. Also vscode provides basic git functions, but git on command line is same for all environments and has all the available commands so using git on command line is advised, but not necessary.
 
-### Installing git
+## Installing git
 Follow installation instructions at [https://git-scm.com/install](https://git-scm.com/install).
 For quick install on command line for debian based linux
 
@@ -20,7 +20,7 @@ For quick install on command line for debian based linux
 apt install git
 ~~~
 
-### Running git locally 
+## Running git locally 
 To use git you navigate to already existing project folder or a new one you want to track. Project folder could look something like this:
 
 ~~~bash
@@ -50,7 +50,7 @@ Commits create a snapshot of the files you can return to and branch from. It is 
 git status
 ~~~
 
-#### Local gitflow
+### Local gitflow
 Once previous loop is completed it is repeated.
 ~~~ mermaid
 graph LR
@@ -67,7 +67,7 @@ git log
 ~~~
 
 
-### What is GitHub
+## What is GitHub
 GitHub is a hosting service for Git repositories. It adds some collaboration features on top of git:
 
 - Remote storage for Git repositories
@@ -78,7 +78,7 @@ GitHub is a hosting service for Git repositories. It adds some collaboration fea
 
 For those who want to self host repositories Gitea is one open-source option to look into.
 
-#### Creating GitHub account and adding SSH Key
+### Creating GitHub account and adding SSH Key
 Before making a new repository you need to create GitHub account on
 [github.com](https://github.com/).
 
@@ -95,7 +95,7 @@ C --> D(Add title describing your device and your public key from id_ed25519.pub
 D --> E[Add SSH Key]
 ~~~
 
-#### New repository
+### New repository
 On GitHub create new repository. Do not add readme file. Then on command line using your username and repository names
 ~~~bash 
 git remote add origin git@github.com:username/repo_name.git
@@ -114,7 +114,7 @@ Then push your local folder to repository and set it as upstream so that git tra
 git push -u origin master
 ~~~
 
-#### Cloning repository
+### Cloning repository
 
 If you want to clone existing repository. On command line use following command to fetch repository setting it automatically as upstream repository.
 ~~~bash 
@@ -122,7 +122,7 @@ git clone git@github.com:username/repo_name.git
 ~~~
 If you are owner or have writing rights you can start pushing and pulling. 
 
-#### Remote gitflow
+### Remote gitflow
 
 When working with repositories same local gitflow is applies, but you will have to first pull changes from repository and at the end of session push your changes to the repository for your local files to be up to date and to share your local work.
 ~~~mermaid
@@ -136,7 +136,7 @@ C --> E[End of session];
 ~~~
 Further you could have stable master / main branch from which you have branched a development branch that you and possibly others are working on by then branching from and merging. 
 
-### Branching and Merging
+## Branching and Merging
 Next is diagram showing possible scenario with branches master, develop, feature and hot fix. 
 ~~~mermaid
 gitGraph
@@ -258,7 +258,7 @@ gid add .
 git commit -m 'resolved merge_.txt conflict'
 ~~~
 
-#### Reset
+### Reset
 If there comes issues in merge process and comes need to abort then:
 ~~~bash
 git merge --abort
