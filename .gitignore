@@ -1,3 +1,5 @@
 # files to be ignored
-.venv
+.venv_windows
 site/
+.venv
+diff_log.txt
