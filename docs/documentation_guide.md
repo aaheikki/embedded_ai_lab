@@ -31,7 +31,7 @@ Combination of markdown, mkdocs and material-for-mkdocs is a solution answering 
 
 
 ## Using markdown
-As mentioned markdown is plain text file name ending .md for application to identify it. Basic syntax and examples can be found from [markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/). We will cover just a few as demonstration. 
+Basic syntax and examples can be found from [markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/). Here is demonstrated a few key syntaxes shortly:
 
 === "Markdown"
     ~~~markdown
@@ -44,10 +44,17 @@ As mentioned markdown is plain text file name ending .md for application to iden
     and smaller headings are gotten by adding more # signs.
 
     #### Table
-    | Row1 | Colum2  |
+    | Label 1 | Label 2  |
     |-|-|
-    |Colum 1  |Row 2 |    
-    ~~~
+    |Row 1  | Colum 2 |
+
+    Table editors are helpful tool when creating more complex tables.
+    
+    #### Code
+    Code tabs can be done enclosing the code between three ~ tilde signs or with three ` backticks signs.
+    This "Markdown box is results of closing this text as code. 
+    ~~~    
+
 === "Result"
     ### Text
     Here is some normal text and *Italic* and **bold**. 
@@ -58,11 +65,41 @@ As mentioned markdown is plain text file name ending .md for application to iden
     and smaller headings are gotten by adding more # signs.
 
     #### Table
-    | Row1 | Colum2  |
+    | Label 1 | Label 2  |
     |-|-|
-    |Colum 1  |Row 2 |    
+    |Row 1  | Colum 2 |
+
+    Table editors are helpful tool when creating more complex tables.
+
+    #### Code
+    Code tabs can be done enclosing the code between three ~ tilde signs or with three ` backticks signs.
+    ~~~
+    Here is also example of code block.
+    ~~~
+
+    ### More markdown
+
+    Markdown has even more features like
+
+    - Images
+    - [Links](http://aaheikki.github.io/embedded_ai_lab)
+    - Syntax highlights for codes
+    - Emojis
+    - High light
+    - Sub- and superscripts
+
 
 ## Using mkdocs
+    Again here will be just brief guide and more comprehensive guide can be found from [mkdocs.org](https://www.mkdocs.org/).
+    To use mkdocs it is first installed using pip. To contain each coding environment it is good practice to create python virtual environment and activate it:
 
+    ~~~python
+    python -m venv .venv
+    source .venv/bin/activate
+    ~~~
+    and then installing mkdocs
+    ~~~python
+    pip install mkdocs
+    ~~~
 
 ## Using material-for-mkdocs
