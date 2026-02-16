@@ -90,16 +90,37 @@ Basic syntax and examples can be found from [markdownguide.org/basic-syntax/](ht
 
 
 ## Using mkdocs
-    Again here will be just brief guide and more comprehensive guide can be found from [mkdocs.org](https://www.mkdocs.org/).
-    To use mkdocs it is first installed using pip. To contain each coding environment it is good practice to create python virtual environment and activate it:
+Again here will be just brief guide and more comprehensive guide can be found from [mkdocs.org](https://www.mkdocs.org/).
+To use mkdocs it is first installed using pip. To contain each coding environment it is good practice to create python virtual environment and activate it:
 
-    ~~~python
-    python -m venv .venv
-    source .venv/bin/activate
-    ~~~
-    and then installing mkdocs
-    ~~~python
-    pip install mkdocs
-    ~~~
+~~~python
+python -m venv .venv
+source .venv/bin/activate
+~~~
+and then installing mkdocs
+~~~python
+pip install mkdocs
+~~~
+
+To create a project into your current directory on command line
+~~~bash
+mkdocs new .
+~~~
+This creates mkdocs.yml configuration file and docs/ directory containing index.md file. Only requirement for configuration file is to have site name by default 'site_name: My Docs'. To get multiple pages you just create more markdown files in docs folder and you can organize them in the docs/ directory inside other directories and mkdocs uses that for navigation bar, or you can specify the navigation in the configuration file. 
+
+To review your site 
+~~~bash
+mkdocs serve
+~~~
+opens local server hosting the site at http://127.0.0.1:8000/ which you can access trough your browser. It should watch changes done to your files and update it but if not then you can just stop the server on command line by pressing Ctrl+C and launching it again. 
+
+To build a site type on the command line
+~~~bash
+mkdocs build
+~~~
+and it creates site/ directory containing the site which you can then host.
+
+This is a simple solution to get your documentation in markdown as static web site. Further you can make pdf files if desired.
 
 ## Using material-for-mkdocs
+Material-for-mkdocs is a theme built on top of mkdocs. It adds modern touch with better search, dark theme, diagrams. Complete documentation can be seen [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) which works also as comparison with just [mkdocs.org](https://www.mkdocs.org/) documentation site.
