@@ -87,7 +87,7 @@ After logging add ssh public key to access your repositories through your GitHub
 ssh-keygen
 ~~~
 On GitHub navigate to:
-~~~mermaid
+~~~ mermaid
 graph LR
 A[Settings] --> B[SSH and GPG keys];
 B --> C[New SSH Key];
@@ -125,7 +125,7 @@ If you are owner or have writing rights you can start pushing and pulling.
 ### Remote gitflow
 
 When working with repositories same local gitflow is applies, but you will have to first pull changes from repository and at the end of session push your changes to the repository for your local files to be up to date and to share your local work.
-~~~mermaid
+~~~ mermaid
 graph LR
 Z[Start of session] --> A[git pull]
 A --> B[local gitflow];
@@ -138,7 +138,7 @@ Further you could have stable master / main branch from which you have branched 
 
 ## Branching and Merging
 Next is diagram showing possible scenario with branches master, develop, feature and hot fix. 
-~~~mermaid
+~~~ mermaid
 gitGraph
     commit id: "initial"
 
@@ -152,15 +152,15 @@ gitGraph
     checkout develop
     merge feature id: "merge feature"
 
-    checkout master
+    checkout main
     branch hot_fix
     checkout hot_fix
     commit id: "hot fix"
-    checkout master
+    checkout main
     merge hot_fix id: "merge hot fix"
 
     checkout develop
-    merge master id: "updating develop branch"
+    merge main id: "updating develop branch"
 
     checkout feature
     commit id: "feature progress"
@@ -168,7 +168,7 @@ gitGraph
     checkout develop
     merge feature id: "merge feature progress"
     
-    checkout master
+    checkout main
     merge develop id: "release"
 ~~~
 
@@ -186,7 +186,7 @@ git merge
 Git will merge things automatically in cases when there is no room for guessing between conflicted changes. In situations in which changes are made to same files in different branches git notifies you of files that have conflicts and modifies them to identify which part is from which branch. You would then make changes to the files the way you see best, add them to next commit and make commit finishing the merge.
 
 Let's go through simple example of conflict in merge. We will add text file in master, branch twice from it and append line to the text file. Then merge first branch which does not have conflicts and then merge the second branch that will have conflict with the first branch. Next is diagram visualizing the example.
-~~~mermaid
+~~~ mermaid
 gitGraph
     commit id: "initial .txt file"
 
@@ -198,7 +198,7 @@ gitGraph
     checkout branch_2
     commit id: "append to .txt file second time"
 
-    checkout master
+    checkout main
     merge branch_1 id: "merge 1st branch"
     merge branch_2 id: "merge 2nd branch"
     commit id: "resolving conflicts - finishing the merge"
