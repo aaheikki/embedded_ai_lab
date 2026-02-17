@@ -1,3 +1,4 @@
+## Introduction to markdown and mkdocs
 Objective of documentation guide is to introduce you to
 
 - **markdown** language: used to create formatted text,
@@ -5,7 +6,7 @@ Objective of documentation guide is to introduce you to
 - **material-for-mkdocs**: a theme for mkdocs adding modern features to the website. 
 
 
-## What is markdown?
+### What is markdown?
 Markdown is 
 
 - markup language used to add formatting elements to plain text documents.
@@ -14,14 +15,14 @@ Markdown is
 - widely used, for example Reddit, GitHub and large language models (LLM) like ChatGPT support and use markdown.
 
 
-## What is mkdocs?
+### What is mkdocs?
 Mkdocs is a markdown application used for generating static websites geared towards project documentation.
 
-## What is material-for-mkdocs?
+### What is material-for-mkdocs?
 Material-for-mkdocs is just a theme for mkdocs and it has some modern features like dark mode and better search.
 
 
-## Why this combination?
+### Why this combination?
 Combination of markdown, mkdocs and material-for-mkdocs is a solution answering documentation problem with key characteristics
 
 - tools are open-source so that anyone can replicate the documentation process.
@@ -29,68 +30,71 @@ Combination of markdown, mkdocs and material-for-mkdocs is a solution answering 
 - tools fit the software development workflow
 - integration from other tools has small friction
 
+## Getting started
+Tutorial on youtube :material-youtube: [Material for MkDocs: Full Tutorial To Build And Deploy Your Docs Portal](https://www.youtube.com/watch?v=xlABhbnNrfI) by James Willet (27 min) covers the basic usage of markdown, mkdocs and material-for-mkdocs and is highly recommended to get started quickly. In following sections you will be shown minimal syntax to get things running in a short amount of time.
 
-## Using markdown
-Basic syntax and examples can be found from [markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/). Here is demonstrated a few key syntaxes shortly:
+
+### Using markdown
+Basic syntax and examples can be found from [markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/). Here are demonstrated a few key syntaxes shortly:
 
 === "Markdown"
     ~~~markdown
-    ### Text
-    Here is some normal text and *Italic* and **bold**. 
+    #### Text
+    Here is some normal text, *Italic* and **bold**. 
     
     Paragraphs are ase separated with empty line between.
 
     Lines breaks are done by adding two spaces at the end of previous line or by <br>
-    and smaller headings are gotten by adding more # signs.
+    and subsections are done by adding more # signs.
 
-    #### Table
+    ##### Table
     | Label 1 | Label 2  |
     |-|-|
     |Row 1  | Colum 2 |
 
     Table editors are helpful tool when creating more complex tables.
     
-    #### Code
+    ##### Code
     Code tabs can be done enclosing the code between three ~ tilde signs or with three ` backticks signs.
     This "Markdown box is results of closing this text as code. 
     ~~~    
 
 === "Result"
-    ### Text
-    Here is some normal text and *Italic* and **bold**. 
+    #### Text
+    Here is some normal text, *Italic* and **bold**. 
     
     Paragraphs are ase separated with empty line between.
 
     Lines breaks are done by adding two spaces at the end of previous line or by <br>
-    and smaller headings are gotten by adding more # signs.
+    and subsections are done by adding more # signs.
 
-    #### Table
+    ##### Table
     | Label 1 | Label 2  |
     |-|-|
     |Row 1  | Colum 2 |
 
     Table editors are helpful tool when creating more complex tables.
 
-    #### Code
+    ##### Code
     Code tabs can be done enclosing the code between three ~ tilde signs or with three ` backticks signs.
     ~~~
     Here is also example of code block.
     ~~~
 
-    ### More markdown
+    #### More markdown
 
     Markdown has even more features like
 
     - Images
-    - [Links](http://aaheikki.github.io/embedded_ai_lab)
+    - Links
     - Syntax highlights for codes
     - Emojis
     - High light
     - Sub- and superscripts
 
 
-## Using mkdocs
-Again here will be just brief guide and more comprehensive guide can be found from [mkdocs.org](https://www.mkdocs.org/).
+### Using mkdocs
+Documentation for mkdocs can be found from [mkdocs.org](https://www.mkdocs.org/).
 To use mkdocs it is first installed using pip. To contain each coding environment it is good practice to create python virtual environment and activate it:
 
 ~~~python
@@ -102,7 +106,7 @@ and then installing mkdocs
 pip install mkdocs
 ~~~
 
-To create a project into your current directory on command line
+To create a mkdocs project into your current directory, type on command line
 ~~~bash
 mkdocs new .
 ~~~
@@ -120,7 +124,30 @@ mkdocs build
 ~~~
 and it creates site/ directory containing the site which you can then host.
 
-This is a simple solution to get your documentation in markdown as static web site. Further you can make pdf files if desired.
+This is a simple solution to get your documentation in markdown as static website. Further you can make pdf files if desired.
 
-## Using material-for-mkdocs
+### Using material-for-mkdocs
 Material-for-mkdocs is a theme built on top of mkdocs. It adds modern touch with better search, dark theme, diagrams. Complete documentation can be seen [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) which works also as comparison with just [mkdocs.org](https://www.mkdocs.org/) documentation site.
+
+Simplest syntax to get material theme is to modify the mkdocs.yml file to:
+~~~
+site_name: My Docs
+theme:
+  name: material
+~~~
+Now your site uses the material theme.
+
+#### Dark mode
+
+To use dark mode mkdocs.yml is modified to:
+~~~
+site_name: My Docs
+theme:
+  name: material
+  palette:
+      # Dark mode
+    - scheme: slate
+      primary: teal
+      accent: green
+~~~
+Here are also primary and accent colors are changed. To view the color palette or how to use custom colors visit the material :material:[documentation](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#configuration)
