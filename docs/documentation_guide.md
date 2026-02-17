@@ -127,19 +127,19 @@ and it creates site/ directory containing the site which you can then host.
 This is a simple solution to get your documentation in markdown as static website. Further you can make pdf files if desired.
 
 ### Using material-for-mkdocs
-Material-for-mkdocs is a theme built on top of mkdocs. It adds modern touch with better search, dark theme, diagrams. Complete documentation can be seen [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) which works also as comparison with just [mkdocs.org](https://www.mkdocs.org/) documentation site.
+Material-for-mkdocs is a theme built on top of mkdocs. It adds modern touch with better search, dark mode, diagrams and more. Complete documentation can be seen :simple-materialformkdocs: [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) which works also as comparison with just [mkdocs.org](https://www.mkdocs.org/) documentation site.
 
-Simplest syntax to get material theme is to modify the mkdocs.yml file to:
+To get started here is simplest syntax to get material theme working by modifying the mkdocs.yml file to:
 ~~~
 site_name: My Docs
 theme:
   name: material
 ~~~
-Now your site uses the material theme.
+Now your site uses the material theme. Further as an example is how to use the dark mode. Other wise consult the :simple-materialformkdocs: [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) documentation.
 
 #### Dark mode
 
-To use dark mode mkdocs.yml is modified to:
+To use dark mode modify mkdocs.yml to:
 ~~~
 site_name: My Docs
 theme:
@@ -150,4 +150,28 @@ theme:
       primary: teal
       accent: green
 ~~~
-Here are also primary and accent colors are changed. To view the color palette or how to use custom colors visit the material :material:[documentation](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#configuration)
+Here are also primary and accent colors changed, but that is not necessary. Comments in .yml file are done using # sign. To view the color palette or how to use custom colors visit the material's :simple-materialformkdocs: [changing-the-colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#configuration) section.
+
+To add toggle between light and dark mode:
+~~~
+site_name: My Docs
+theme:
+  name: material
+  palette:
+      # Dark mode
+    - scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+      # Light mode
+    - scheme: default
+      primary: light green
+      accent: lime
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+~~~
+
