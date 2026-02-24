@@ -34,6 +34,7 @@ nav:
   - Embedded AI Software Platform: embedded_ai_software_platform.md
 
   - Guides:
+    - Bash guide: bash_guide.md
     - Version Control Guide: version_control_guide.md
     - Documentation Guide: documentation_guide.md
     
