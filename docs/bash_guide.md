@@ -57,14 +57,16 @@ To see further into the documents directory you enter them as argument to ls com
 [aaheikki:~$] ls documents/
 test
 ~~~
-If you have just installed wsl and have launched ubuntu using it. Your /home/username directory might be completely empty. Let us move to top of the file tree by using the cd command and then typing ls to see what there is:
+If you have just installed wsl, your /home/username directory might be completely empty. Let us move to top of the file tree by using the cd command and then typing ls to see what there is:
 ~~~bash
 [aaheikki:/$] cd /
 [aaheikki:/$] ls
 bin                boot  etc   init  lib.usr-is-merged  lost+found  mnt  proc  run   sbin.usr-is-merged  srv  tmp  var        wslEblNiP  wsldKLike
 bin.usr-is-merged  dev   home  lib   lib64              media       opt  root  sbin  snap                sys  usr  wslBgKpLc  wslImiAle  wsldjCFle
 ~~~
-Here we do not go into the file system hierarchy, but those who are interested the earlier mentioned book covers briefly the usage of common directories on page 20. But let us go and find our files we have on windows. Those are located in /mnt/ directory which will also contain other storage devices mounted manually. Before using cd let us check the content with ls:
+Here we do not go into the file system hierarchy, but those who are interested the book mentioned earlier covers briefly the usage of common directories on page 20. 
+
+But let us go and find our files we have on Windows. Those are located in mnt/ directory which will also contain other storage devices mounted manually. Before using cd let us check the content with ls:
 
 ~~~bash
 [aaheikki:/$] ls mnt/
