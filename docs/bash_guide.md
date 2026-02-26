@@ -201,6 +201,13 @@ This gives you history lines with "mnt".
 - cp - copy files and directories
 - rm - remove files or directories
 - (ln) - make links between files -s symbolic not hard link
+- nano - Nano's ANOther editor, inspired by Pico
+- (vim) - Vi IMproved, a programmer's text editor
+- (echo) - display a line of text
+- (>) - rewrite file
+- (>>) - append to file
+- chmod - change access permissions
+
 
 
 Let us return to the home with <code>cd ~</code>, make a new directory and go to it:
@@ -278,13 +285,7 @@ That created soft link named <code>windows_aaheikki</code> that pointing to <cod
 
 
 
-#### Text editors
-- nano - Nano's ANOther editor, inspired by Pico
-- (vim) - Vi IMproved, a programmer's text editor
-- (echo) - display a line of text
-- (>) - rewrite file
-- (>>) - append to file
-
+#### Editing file content
 Text editors are used to edit text! Nano is more beginner friendly resembling Windows text editor. Vim is a bit trickier but has powerful tools and is by default on installed many Linux distributions so it good idea to check introduction to vim. The Linux Command Line book covers vim on page 150. They are used by typing the command and the file you want to edit or create <code>nano text</code>. Type something and then to exit press Ctrl+X, it asks you to save or abort changes, press y to save and then Enter to exit. To copy paste so said normally you need to use Ctrl+Shift+C and Ctrl+Shift+V inside the terminals. Terminals also have their own short keys to cut, paste go to lines. Do see these from online guides or using manual or help pages.
 
 Display on command line what you wrote:
@@ -309,16 +310,16 @@ line 2
 ~~~
 Note that you should add filename extensions according to their type by adding to the names end \[.txt .zip .png .xz .deb .iso\] and so on. Linux itself considers them as part of name, but other application use them.
 
+#### File permissions
+chmod change access permissions (augo=+-rwx,and)
 
 
 #### (Zip)
-- 
-- (zip) - package and compress (archive) files
-- (unzip) - list, test and extract compressed files in a ZIP archive
+- (xz, unxz) - compress or decompress .xz and .lzma files
+- (zip, unzip) - package, compress or decompress zip archive files
+As a heads up here are two often used compression commands that you will find useful. 
 
 ### Package management
 - apt - provides a high-level commandline interface for the package management system.
 - deb - deb is the software package format for the Debian Linux distribution and its derivatives.
 
-### File permissions
-- chmod change access permissions (augo=+-rwx,and)
