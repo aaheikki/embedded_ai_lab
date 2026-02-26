@@ -195,26 +195,130 @@ The <code>grep</code> command is used to find patterns in a file. It can also be
 This gives you history lines with "mnt". 
 
 
-
-
-### Manipulating files and directories
+### Manipulating directories
 - mkdir - make directories 
 - mv - move (rename) files
 - cp - copy files and directories
 - rm - remove files or directories
-- chmod change access permissions (augo=+-rwx,and)
 - (ln) - make links between files -s symbolic not hard link
-- (>) - rewrite file
-- (>>) - append to file
+
+
+Let us return to the home with <code>cd ~</code>, make a new directory and go to it:
+~~~bash
+[aaheikki:~$] mkdir playground
+[aaheikki:~$] cd playground
+[aaheikki:playground$]
+~~~
+Lets make more directories
+~~~bash
+[aaheikki:playground$] mkdir dir1 dir2 dir3
+[aaheikki:playground$] ls
+dir1  dir2  dir3
+~~~
+Move directories dir2 and dir3 to dir1
+~~~bash
+[aaheikki:playground$] mv dir2 dir3 dir1
+[aaheikki:playground$] ls
+dir1
+[aaheikki:playground$] ls dir1/
+dir2  dir3
+~~~
+Make dir 4 and copy it to dir3
+~~~bash
+[aaheikki:playground$] mkdir dir4
+[aaheikki:playground$] cp dir4 dir1/dir3/
+cp: -r not specified; omitting directory 'dir4'
+[aaheikki:playground$] cp -r dir4 dir1/dir3/
+[aaheikki:playground$] tree
+.
+├── dir1
+│   ├── dir2
+│   └── dir3
+│       └── dir4
+└── dir4
+~~~
+Note that option <code>-r</code> was needed. Check what it says in help. Then let us cp dir1 to dir4
+~~~bash
+[aaheikki:playground$] cp -r dir1/ dir4/
+[aaheikki:playground$] tree
+.
+├── dir1
+│   ├── dir2
+│   └── dir3
+│       └── dir4
+└── dir4
+    └── dir1
+        ├── dir2
+        └── dir3
+            └── dir4
+~~~
+Then let us finish by removing them.
+~~~bash
+[aaheikki:playground$] rm -r dir1 dir4
+[aaheikki:playground$] tree
+.
+
+0 directories, 0 files
+~~~
+It is to be noted that you should be careful with the remove <code>rm</code>. There are no backups by default and Linux assumes you know what you are doing. So do check the options and make sure to test how it works before deleting anything of importance. 
+
+To access your windows files more easily you could do a soft link pointing to you user files:
+
+~~~bash  
+[aaheikki:~$] ln -s /mnt/c/Users/aaheikki/ ~/windows_aaheikki
+documents  playground  snap  windows_aaheikki
+[aaheikki:~$] ls -l ~/
+total 12
+drwxr-xr-x 3 aaheikki aaheikki 4096 Feb 11 14:01 documents
+drwxr-xr-x 2 aaheikki aaheikki 4096 Feb 26 13:23 playground
+drwx------ 3 aaheikki aaheikki 4096 Feb 13 10:03 snap
+lrwxrwxrwx 1 aaheikki aaheikki   22 Feb 13 09:57 windows_aaheikki -> /mnt/c/Users/aaheikki/
+~~~
+That created soft link named <code>windows_aaheikki</code> that pointing to <code>/mnt/c/Users/aaheikki/ directory</code>. Soft links cab be made to point to files also. So soft link is kind of another door to what ever it is pointing at.
+
+
 
 #### Text editors
 - nano - Nano's ANOther editor, inspired by Pico
 - (vim) - Vi IMproved, a programmer's text editor
+- (echo) - display a line of text
+- (>) - rewrite file
+- (>>) - append to file
+
+Text editors are used to edit text! Nano is more beginner friendly resembling Windows text editor. Vim is a bit trickier but has powerful tools and is by default on installed many Linux distributions so it good idea to check introduction to vim. The Linux Command Line book covers vim on page 150. They are used by typing the command and the file you want to edit or create <code>nano text</code>. Type something and then to exit press Ctrl+X, it asks you to save or abort changes, press y to save and then Enter to exit. To copy paste so said normally you need to use Ctrl+Shift+C and Ctrl+Shift+V inside the terminals. Terminals also have their own short keys to cut, paste go to lines. Do see these from online guides or using manual or help pages.
+
+Display on command line what you wrote:
+~~~bash
+[aaheikki:playground$] cat text
+line 1
+~~~
+Make another file with <code>echo "line 2" > text2<code>. The <code>echo</code> command prints your string on the terminal and <code>></code> writes it into a file. If there exist file with the same name this overwrites it. To append text to file use <code>>></code>. Let us try this with <code>cat</code> command:
+~~~bash
+cat text2 >> text
+[aaheikki:playground$] cat text
+line 1
+line 2
+~~~
+To add multiple files:
+~~~bash
+[aaheikki:playground$] cat text text2 >> text3
+[aaheikki:playground$] cat text3
+line 1
+line 2
+line 2
+~~~
+Note that you should add filename extensions according to their type by adding to the names end \[.txt .zip .png .xz .deb .iso\] and so on. Linux itself considers them as part of name, but other application use them.
+
+
 
 #### (Zip)
+- 
 - (zip) - package and compress (archive) files
 - (unzip) - list, test and extract compressed files in a ZIP archive
 
 ### Package management
 - apt - provides a high-level commandline interface for the package management system.
-- (snap) - install, configure, refresh and remove snaps. Snaps are packages that work across many different Linux distributions.
+- deb - deb is the software package format for the Debian Linux distribution and its derivatives.
+
+### File permissions
+- chmod change access permissions (augo=+-rwx,and)
