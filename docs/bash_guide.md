@@ -86,7 +86,7 @@ ls: cannot access 'mnt/c/swapfile.sys': Permission denied
  Config.Msi                        DumpStack.log.tmp        'Program Files (x86)'   Teams.txt                    inetpub
  Dell                              Intel                     ProgramData            Users                        pagefile.sys
  ~~~
-There are some files that have limited access but we can see familiar file names like 'Program Files', 'Program Files (x86)', Users and Windows. Next you should locate your username and files inside the Users directory. Use ls to see what users there are and cd to navigate to your user files
+There are some files that have limited access but we can see familiar file names like 'Program Files', 'Program Files (x86)', Users and Windows. Next you should locate your username and files inside the Users directory. Use ls to see what users there are and cd to navigate to your user files. As a tip you can use *Tab* to auto complete your arguments if there are no other options available. For example trying to type <code>ls /mnt/c/'Docume</code> and tab you should get <code>ls /mnt/c/'Documents and Settings'</code>
 ~~~bash
 [aaheikki:/$] cd /mnt/c/Users/aaheikki/
 [aaheikki:aaheikki$]
@@ -170,32 +170,42 @@ SYNOPSIS
 ~~~
 To navigate up down one line use arrow keys,to up down one page space bar and *b*. For help type *h*. To search a pattern in manual page type <code>/pattern</code>. You get to the next instance by pressing *n*. To search for commands use <code>man -k pattern1 pattern2 ...</code> or <code>apropos pattern1 pattern2</code>. To see more search options check manual page of <code>man apropos</code>. Sometimes there might not be manual page, but there could be then info document that can be read with <code>info</code> command, so it is good to keep in mind. 
 
-
-
-
-
-
-
+With these you should have some tools to find commands and help, but keep in mind it is many times easier to see from internet how others have done it first and then afterwards it is faster to check manual and help pages to see what were the options and argument orders.
 
 
 
 ### Read files
+- cat - concatenate files and print on the standard output
 - less - opposite of more
-- (more) - display the contents of a file in a terminal
-- (cat) - concatenate files and print on the standard output
-- (grep)  - print lines that match pattern
+- (tail) - output the last part of files
+- (head) - output the first part of files
+- (grep) - print lines that match pattern
 - (|) - pipe the standard output of command to standard input of next command
-- (>) - rewrite file
-- (>>) - append to file
+
+
+To plainly print content of a file to terminal <code>cat</code> command is used. It just plainly spits out all of the files content to terminal so bigger files are not practical to read with it. For reading those <code>less</code> is recommended it has similar navigation as man page so to quit press *q*. If you check the manual page or help you will see reference to <code>more</code> command which is kind of between cat and less. It displays the content on the terminal, but one page at the time. Also check <code>tail</code> and <code>head</code> commands.
+
+The <code>grep</code> command is used to find patterns in a file. It can also be used with pipe (|) to take as input another commands output. You are recommended to test <code>grep</code> and even test piping something into it like:
+~~~bash
+[aaheikki:~$] history | grep mnt
+   35  cd /mnt
+  116  cd /mnt
+  128  ln -s /mnt/c/Users/aaheikki/ ~/windows_aaheikki
+~~~
+This gives you history lines with "mnt". 
+
+
+
 
 ### Manipulating files and directories
 - mkdir - make directories 
 - mv - move (rename) files
 - cp - copy files and directories
 - rm - remove files or directories
-- chmod change access permissions ( chmod a +-rwx)
+- chmod change access permissions (augo=+-rwx,and)
 - (ln) - make links between files -s symbolic not hard link
-
+- (>) - rewrite file
+- (>>) - append to file
 
 #### Text editors
 - nano - Nano's ANOther editor, inspired by Pico
