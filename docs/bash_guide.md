@@ -195,7 +195,7 @@ The <code>grep</code> command is used to find patterns in a file. It can also be
 This gives you history lines with "mnt". 
 
 
-### Manipulating directories
+### Manipulating directories and files
 - mkdir - make directories 
 - mv - move (rename) files
 - cp - copy files and directories
