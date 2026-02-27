@@ -41,7 +41,9 @@ In following sections you will be shown in each section first essential commands
 - cd - change the shell working directory
 - (file) - determine file type
 - (tree) - list contents of directories in a tree-like format
+- (find) - search for files in a directory hierarchy
 - (history) - GNU History Library
+
 
 After opening the terminal to first see where you are type pwd command and hit enter. You will see something like:
 ~~~
@@ -112,7 +114,7 @@ Using the <code>file</code> command you can identify witch type of a file is
 ~~~
 You should try this on different types of files. If you are on wsl go back to your windows user files. As shortcut you could use <code>history</code> command. You should find the cd command <code>817  cd /mnt/c/Users/aaheikki/</code> and you can copy paste it using Ctrl+Shift+C and Ctrl+Shift+V or by typing <code>!line_number_of_command</code> to execute it.
 
-Another useful command for navigation is <code>tree</code> command. It digs deeper into the file tree and might be nicer when looking for something. Some helpful options are <code>-d</code> to show only directories and <code>-L DEPTH</code> to limit the depth it goes to. To use it with depth 3:
+Another useful command for navigation is <code>tree</code> command. It digs deeper into the file tree and might be nicer when looking for something. If it is not installed you can install it with <code>sudo apt install tree</code>. Some helpful options are <code>-d</code> to show only directories and <code>-L DEPTH</code> to limit the depth it goes to. To use it with depth 3:
 ~~~bash
 [aaheikki:~$] tree -dL 3
 .
@@ -206,6 +208,7 @@ This gives you history lines with "mnt".
 - (echo) - display a line of text
 - (>) - rewrite file
 - (>>) - append to file
+- sudo - allows a permitted user to execute a command as the superuser or another user.
 - chmod - change access permissions
 
 
@@ -311,13 +314,48 @@ line 2
 Note that you should add filename extensions according to their type by adding to the names end \[.txt .zip .png .xz .deb .iso\] and so on. Linux itself considers them as part of name, but other application use them.
 
 #### File permissions
-chmod change access permissions (augo=+-rwx,and)
+Let us look more closely what does the <code>ls -l</code> command show us.
+~~~bash
+[aaheikki:playground$] ls -l
+total 12
+-rw-r--r-- 1 aaheikki aaheikki 14 Feb 26 13:48 text
+-rw-r--r-- 1 aaheikki aaheikki  7 Feb 26 13:47 text2
+-rw-r--r-- 1 aaheikki aaheikki 21 Feb 26 13:49 text3
+~~~
+
+We will only cover the first section <code>-rw-r--r--</code>, but the Command Line book recommended covers these fields in more detail on page permission topic on page 15. The first character line "-" indicates that the file is regular file, <code>d</code> indicating it is directory and <code>l</code> indicating a link The next nine characters "rwx-"describes  read, write and execute permissions of user, group and others. Just line indicates no permission. The book covers permissions and their manipulation in detail on page 93. 
+
+Simple way to change permissions is using <code>chmod</command>. Let us add execute permission for user and taking read permission away from others for text2 file:
+~~~bash
+[aaheikki:playground$] chmod u+x text2
+[aaheikki:playground$] chmod o-r text2
+[aaheikki:playground$] ls -l
+total 12
+-rw-r--r-- 1 aaheikki aaheikki 14 Feb 26 13:48 text
+-rwxr----- 1 aaheikki aaheikki  7 Feb 26 13:47 text2
+-rw-r--r-- 1 aaheikki aaheikki 21 Feb 26 13:49 text3
+~~~
+Set read, write and execute permission for all for text3 file
+
+
+
+man chmod change access permissions (augo=+-rwx,and)
+
+
+
+
+
+
+
+
 
 
 #### (Zip)
 - (xz, unxz) - compress or decompress .xz and .lzma files
 - (zip, unzip) - package, compress or decompress zip archive files
-As a heads up here are two often used compression commands that you will find useful. 
+As a heads up here are two often used compression commands that you will find useful. Use <code>man -k</code> or <code>apropos</code> to search for other compression tools that might be already installed.
+
+
 
 ### Package management
 - apt - provides a high-level commandline interface for the package management system.
