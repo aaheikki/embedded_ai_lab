@@ -29,9 +29,10 @@ theme:
 # Side navigation bar
 nav:
   - Home: index.md
-
-  - Getting Started: getting_started.md   
-  - Embedded AI Software Platform: embedded_ai_software_platform.md
+  - Getting Started:
+    - Before Getting Started: before_getting_started.md
+    - Getting Started: getting_started.md   
+    - Embedded AI Software Platform: embedded_ai_software_platform.md
 
   - Guides:
     - Bash guide: bash_guide.md

@@ -47,4 +47,4 @@ You can contact me through email via [aaro.heikkinen@uef.fi](mailto:aaro.heikkin
 - or any general questions.
 
 ### Getting started
-Next follow the [getting started](getting_started.md) page for the intended order of the tutorial.
+Next follow the [before getting started](before_getting_started.md) page for the intended order of the tutorial.
