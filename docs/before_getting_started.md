@@ -9,7 +9,7 @@
 
 If you are not familiar with any command line then follow [bash guide](bash_guide.md).
 
-## Version Control: What It Is and Why You Need It
+## Version Control
 
 - **Version control** is the practice of tracking and managing changes in files and software projects.
     - Tracking changes lets you revert to earlier working states if new bugs or issues appear during development.
@@ -21,7 +21,7 @@ If you are not familiar with any command line then follow [bash guide](bash_guid
 
 If you are not familiar with version control follow [version control guide](version_control_guide.md).
 
-## Code Documentation and Why It Matters
+## Code Documentation
 
 - **Inline comments** explain specific parts of the code.
     - **Structure:** Writing code with clear structure and meaningful comments makes it easier to navigate and debug.
