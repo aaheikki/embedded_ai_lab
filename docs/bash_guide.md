@@ -336,18 +336,15 @@ total 12
 -rw-r--r-- 1 aaheikki aaheikki 21 Feb 26 13:49 text3
 ~~~
 Set read, write and execute permission for all for text3 file
-
-
-
-man chmod change access permissions (augo=+-rwx,and)
-
-
-
-
-
-
-
-
+~~~bash
+[aaheikki:playground$] chmod a=rwx text3
+[aaheikki:playground$] ls -l
+total 12
+-rw-r--r-- 1 aaheikki aaheikki 14 Feb 26 13:48 text
+-rwxr----- 1 aaheikki aaheikki  7 Feb 26 13:47 text2
+-rwxrwxrwx 1 aaheikki aaheikki 21 Feb 26 13:49 text3
+~~~
+But it is not good practice to have higher permissions than necessary. There is also other way to set permissions witch is about mapping each "rwx" combination to number [0-7] and then the code would be <code>chmod 175 file_name</code>. Both work but the one showed is might be more intuitive to remember in practice.
 
 
 #### (Zip)
@@ -359,5 +356,10 @@ As a heads up here are two often used compression commands that you will find us
 
 ### Package management
 - apt - provides a high-level commandline interface for the package management system.
-- deb - deb is the software package format for the Debian Linux distribution and its derivatives.
+- .deb - deb is the software package format for the Debian Linux distribution and its derivatives.
+- (dpkg) - package manager for debian.
 
+Important difference between Linux distributions is the packaging systems. Ubuntu based on Debian .deb and <code>apt</code> is package tool for managing packages.
+There is <code>apt search pattern</code>, but it might be easier to find packages that meet your needs from the internet and then install them using <code>apt install package_name</code> if that is an option or by downloading .deb file and then using <code>apt deb file_name.deb</code> or <code>dpkg -i file_name.deb</code>  to install it. The <code>dpkg</code> is low level package management, but mostly you get around with apt.
+
+To keep your system up to date you just need to use <code>apt update; apt upgrade</code>. The <code>Sudo</code> command might be necessary with both. This should be done frequently and there are ways to automate this and other tasks by writing shell scripts. This should be enough and a bit more to get you started using the bash.
