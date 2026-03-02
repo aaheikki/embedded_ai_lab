@@ -13,11 +13,11 @@ If you are not familiar with any command line then follow [bash guide](bash_guid
 
 - **Version control** is the practice of tracking and managing changes in files and software projects.
     - Tracking changes lets you revert to earlier working states if new bugs or issues appear during development.
-    - **Git** is chosen as the version control system.
 - **Branching and merging** allow developers to work independently without interfering with each other.
     - Team members can develop features, test ideas, or prototype solutions in isolated branches.
     - When the work is stable, it can be merged cleanly into the main branch.
     - Even for individuals, branching avoids creating multiple copies of project folders and manually tracking them.
+- **Git** is widely used version control system.
 
 If you are not familiar with version control follow [version control guide](version_control_guide.md).
 
@@ -31,6 +31,6 @@ If you are not familiar with version control follow [version control guide](vers
     - **Building on top:** Clear documentation makes it easy to understand what already exists, so new features do not reinvent previous work.
     - **Collaboration:** New collaborators can become productive quickly while maintaining consistency across the project.
     - **User adoption:** People are more likely to use and contribute to systems that are understandable and well explained.
-    - **markdown and mkdocs** are chosen for project documentation.
+    - **Markdown and mkdocs:** Markup language and application fore generating documentation sites.
 
 If you are interested in markdown and mkdocs follow [documentation guide](documentation_guide.md).
