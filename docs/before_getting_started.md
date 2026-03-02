@@ -1,13 +1,14 @@
 ## Command Line
 
 - The command line is the primary interface for development tools like version control and ssh connection.
-- It is not desirable to allocate resources for GUI in embedded systems.
+- GUI takes resources, which is not desirable in embedded systems.
 - **Bash** is chosen as the default shell program because:
     - It is on default on most UNIX systems like Linux and MacOS.
     - It is also available for Windows user by installing wsl.
+    - Linux is dominating on servers and ssh and bash are used for csc services.
     - Documentation is easier to follow and write for all.
 
-If you are not familiar with any command line then follow [bash guide](bash_guide.md).
+If you are not familiar with any command line system then follow [bash guide](bash_guide.md).
 
 ## Version Control
 
