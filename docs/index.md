@@ -5,6 +5,7 @@
 </div>
 
 ## Embedded AI Laboratory
+[Project's UEF connect page](https://uefconnect.uef.fi/sute/)
 
 ### Who is this for?
 - Students and researchers in embedded systems, AI and robotics
