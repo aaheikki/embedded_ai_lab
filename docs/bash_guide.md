@@ -89,7 +89,7 @@ ls: cannot access 'mnt/c/swapfile.sys': Permission denied
  Dell                              Intel                     ProgramData            Users                        pagefile.sys
 ~~~
 
-There are some files that have limited access but we can see familiar file names like 'Program Files', 'Program Files (x86)', Users and Windows. Next you should locate your username and files inside the Users directory. Use <code>ls</code> to see what users there are and <code>cd</code> to navigate to the directory. As a tip you can use the Tab-key to auto complete your arguments if there are no other options available. For example trying to type <code>ls /mnt/c/'Docume</code> and Tab-key you should get <code>ls /mnt/c/'Documents and Settings'</code>. Additionally, double-tapping the Tab-key gives you a list of possible options based on what you've arlready typed.
+There are some files that have limited access but we can see familiar file names like 'Program Files', 'Program Files (x86)', Users and Windows. Next you should locate your username and files inside the Users directory. Use <code>ls</code> to see what users there are and <code>cd</code> to navigate to the directory. As a tip you can use the Tab-key to auto complete your arguments if there are no other options available. For example trying to type <code>ls /mnt/c/'Docume</code> and Tab-key you should get <code>ls /mnt/c/'Documents and Settings'</code>. Additionally, double-tapping the Tab-key gives you a list of possible options based on what you've already typed.
 
 ~~~bash
 [aaheikki:/$] cd /mnt/c/Users/aaheikki/
