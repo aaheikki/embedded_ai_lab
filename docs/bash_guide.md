@@ -116,7 +116,7 @@ Using the <code>file</code> command you can identify which type of a file is
 ~~~
 You should try this on different types of files. If you are on wsl go back to your windows user files to test it out. As a shortcut you could use <code>history</code> command. You should find the <code>cd</code> command you used previously <code>817  cd /mnt/c/Users/aaheikki/</code> and you can copy paste it using Ctrl+Shift+C and Ctrl+Shift+V or to execute it directly by typing <code>!line_number_of_command</code>.
 
-Another useful command for navigation is the <code>tree</code> command. It digs deeper into the file tree and might be visually more appealing  when looking at the bigger picture. If it is not installed you can install it with <code>sudo apt install tree</code>. Some helpful options are <code>-d</code> to show only directories and <code>-L DEPTH</code> to limit the depth it goes to. To use them with depth 3:
+Another useful command for navigation is the <code>tree</code> command. It digs deeper into the file tree and might be visually more appealing  when looking at the bigger picture. If it is not installed you can install it with <code>sudo apt install tree</code>. You may first need to do <code>sudo apt update</code>. Some helpful options are <code>-d</code> to show only directories and <code>-L DEPTH</code> to limit the depth it goes to. To use them with depth 3:
 ~~~bash
 [aaheikki:~$] tree -dL 3
 .
