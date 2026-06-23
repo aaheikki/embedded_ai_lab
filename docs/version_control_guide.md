@@ -82,10 +82,8 @@ For those who want to self host repositories Gitea is one open-source option to 
 Before making a new repository you need to create GitHub account on
 [github.com](https://github.com/).
 
-After logging in add a ssh public key to access your repositories through your GitHub account. If you do not have generated ssh keys use the command line to create a private and public key pair to ~/.ssh/id_ed25519 and ~/.ssh/id_ed25519.pub by typing:
-~~~bash
-ssh-keygen
-~~~
+After logging in add a ssh public key to access your repositories through your GitHub account. If you do not have generated ssh keys use the command line to create a private and public key pair to ~/.ssh/id_ed25519 and ~/.ssh/id_ed25519.pub by typing <code>ssh-keygen</code>. Do not specify a file to save the keys to.
+
 On GitHub navigate to:
 ~~~ mermaid
 graph LR
